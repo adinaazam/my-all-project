@@ -1,393 +1,100 @@
-/* ===========================
-   Google Font & Reset
-=========================== */
-
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 body{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(135deg,#4f46e5,#06b6d4);
-    padding:20px;
+    background: #f4f4f4;
+    padding: 30px;
 }
-
-/* ===========================
-   Main Container
-=========================== */
 
 .container{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
-
-/* ===========================
-   Calculator Card
-=========================== */
-
-.calculator{
-
-    width:100%;
-    max-width:520px;
-
-    background:rgba(255,255,255,.15);
-    backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,.25);
-
-    border-radius:20px;
-
-    padding:35px;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.25);
-
-    animation:fadeIn .8s ease;
-
-}
-
-/* ===========================
-   Heading
-=========================== */
 
 h1{
-
-    text-align:center;
-    color:#fff;
-    font-size:32px;
-    margin-bottom:8px;
-
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-.subtitle{
-
-    text-align:center;
-    color:#ecf0f1;
-    margin-bottom:30px;
-    font-size:15px;
-
+h2{
+    color: #444;
+    margin: 15px 0;
 }
 
-/* ===========================
-   Labels
-=========================== */
-
-label{
-
-    display:block;
-    color:#fff;
-    margin-bottom:10px;
-    font-weight:600;
-
+h3{
+    color: #007bff;
+    margin-bottom: 10px;
 }
 
-/* ===========================
-   Input
-=========================== */
-
-input{
-
-    width:100%;
-    padding:16px;
-
-    border:none;
-    outline:none;
-
-    border-radius:10px;
-
-    font-size:18px;
-
-    margin-bottom:20px;
-
-    background:#fff;
-
-    transition:.3s;
-
+h4{
+    margin: 10px 0;
+    color: #555;
 }
 
-input:focus{
-
-    box-shadow:0 0 12px rgba(255,255,255,.8);
-
+input,
+textarea{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
-/* ===========================
-   Example Box
-=========================== */
-
-.examples{
-
-    background:rgba(255,255,255,.18);
-
-    color:#fff;
-
-    padding:15px;
-
-    border-radius:10px;
-
-    line-height:1.8;
-
-    margin-bottom:25px;
-
-    font-size:14px;
-
+textarea{
+    height: 100px;
+    resize: vertical;
 }
-
-/* ===========================
-   Buttons
-=========================== */
 
 button{
-
-    width:100%;
-
-    padding:15px;
-
-    font-size:18px;
-
-    border:none;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-    font-weight:600;
-
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
 }
 
 button:hover{
-
-    transform:translateY(-2px);
-
+    background: #0056b3;
 }
 
-/* Calculate Button */
-
-button[type="submit"]{
-
-    background:#22c55e;
-    color:white;
-    margin-bottom:15px;
-
+.post{
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
 }
 
-button[type="submit"]:hover{
-
-    background:#16a34a;
-
+.post p{
+    margin: 8px 0;
+    color: #333;
 }
 
-/* Reset Button */
-
-.reset-btn{
-
-    background:#ef4444;
-    color:white;
-
+hr{
+    margin: 20px 0;
+    border: 1px solid #ddd;
 }
 
-.reset-btn:hover{
+@media (max-width: 768px){
 
-    background:#dc2626;
-
-}
-
-/* ===========================
-   Result Card
-=========================== */
-
-.result{
-
-    margin:30px auto;
-
-    max-width:520px;
-
-    background:white;
-
-    padding:25px;
-
-    border-radius:15px;
-
-    text-align:center;
-
-    font-size:26px;
-
-    font-weight:bold;
-
-    color:#2563eb;
-
-    box-shadow:0 12px 25px rgba(0,0,0,.18);
-
-}
-
-/* ===========================
-   Error Card
-=========================== */
-
-.error{
-
-    margin:30px auto;
-
-    max-width:520px;
-
-    background:#ffe5e5;
-
-    color:#d90429;
-
-    padding:20px;
-
-    border-radius:15px;
-
-    text-align:center;
-
-    font-size:18px;
-
-    font-weight:600;
-
-    border-left:6px solid #d90429;
-
-}
-
-/* ===========================
-   History Section
-=========================== */
-
-.history{
-
-    margin:30px auto;
-
-    max-width:520px;
-
-    background:white;
-
-    padding:20px;
-
-    border-radius:15px;
-
-    box-shadow:0 10px 20px rgba(0,0,0,.15);
-
-}
-
-.history h2{
-
-    color:#2563eb;
-
-    margin-bottom:15px;
-
-    text-align:center;
-
-}
-
-.history ul{
-
-    list-style:none;
-
-}
-
-.history li{
-
-    padding:10px;
-
-    border-bottom:1px solid #ddd;
-
-    font-size:16px;
-
-}
-
-/* ===========================
-   Back Button
-=========================== */
-
-.back{
-
-    display:block;
-
-    width:220px;
-
-    margin:30px auto;
-
-    text-align:center;
-
-    text-decoration:none;
-
-    background:#2563eb;
-
-    color:white;
-
-    padding:14px;
-
-    border-radius:10px;
-
-    transition:.3s;
-
-}
-
-.back:hover{
-
-    background:#1d4ed8;
-
-}
-
-
-@keyframes fadeIn{
-
-    from{
-
-        opacity:0;
-        transform:translateY(40px);
-
-    }
-
-    to{
-
-        opacity:1;
-        transform:translateY(0);
-
-    }
-
-}
-
-
-
-@media(max-width:600px){
-
-    .calculator{
-
-        padding:25px;
-
-    }
-
-    h1{
-
-        font-size:26px;
-
-    }
-
-    input{
-
-        font-size:16px;
-
+    .container{
+        width: 95%;
     }
 
     button{
-
-        font-size:16px;
-
-    }
-
-    .result{
-
-        font-size:22px;
-
+        width: 100%;
     }
 
 }
